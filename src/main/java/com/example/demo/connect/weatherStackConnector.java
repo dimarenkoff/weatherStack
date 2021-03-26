@@ -14,7 +14,7 @@ public class weatherStackConnector {
 	private static String APIKey="9c426f3df13fea535bba98f41d91f298";
 	private static String url=baseURL+urlParam+APIKey+"&query=";
 	
-	public String getWeatherForCity(String mesto) throws URISyntaxException {
+	public String getWeatherForCity(city mesto) throws URISyntaxException {
 		RestTemplate dotaz = new RestTemplate();
 		URI link;
 		link=null;

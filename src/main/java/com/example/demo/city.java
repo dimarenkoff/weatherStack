@@ -3,5 +3,7 @@ package com.example.demo;
 public enum city {
 	CHRZIN,
 	OSTRAVA,
-	PRAHA
+	PRAHA,
+	BRNO,
+	JESENIK
 }

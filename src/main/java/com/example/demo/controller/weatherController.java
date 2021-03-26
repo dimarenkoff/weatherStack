@@ -15,7 +15,7 @@ public class weatherController {
 	String getWeather(){return "Pocasi pro vsechan mesta"; }
 	@RequestMapping("/weather/{city}")	
 	String getWeatherForCity(@PathVariable String city) throws URISyntaxException{
-		//city cityEnum=city.valueOf(mesto.toUpperCase());
+		city cityEnum=com.example.demo.city.valueOf(city.toUpperCase());
 
-		weatherStackConnector connector=new weatherStackConnector(); return connector.getWeatherForCity(city);}
+		weatherStackConnector connector=new weatherStackConnector(); return connector.getWeatherForCity(cityEnum);}
 }
