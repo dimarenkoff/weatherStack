@@ -8,6 +8,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.city;
 
+import model.weatherStackDto;
+
 public class weatherStackConnector {
 	private static String baseURL="http://api.weatherstack.com/";
 	private static String urlParam="current?access_key=";
@@ -19,7 +21,8 @@ public class weatherStackConnector {
 		URI link;
 		link=null;
 		link=new URI(url+mesto);
-		ResponseEntity<String> response=dotaz.getForEntity(link, String.class);
-		return response.getBody();
+		//ResponseEntity<String> response=dotaz.getForEntity(link, String.class);
+		ResponseEntity<weatherStackDto> response = dotaz.getForEntity(link, weatherStackDto.class);
+		return response.getBody().Location.getName();
 	}
 }
