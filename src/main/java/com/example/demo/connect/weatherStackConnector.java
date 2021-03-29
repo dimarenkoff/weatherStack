@@ -16,13 +16,13 @@ public class weatherStackConnector {
 	private static String APIKey="9c426f3df13fea535bba98f41d91f298";
 	private static String url=baseURL+urlParam+APIKey+"&query=";
 	
-	public String getWeatherForCity(city mesto) throws URISyntaxException {
+	public weatherStackDto getWeatherForCity(city mesto) throws URISyntaxException {
 		RestTemplate dotaz = new RestTemplate();
 		URI link;
 		link=null;
 		link=new URI(url+mesto);
 		//ResponseEntity<String> response=dotaz.getForEntity(link, String.class);
 		ResponseEntity<weatherStackDto> response = dotaz.getForEntity(link, weatherStackDto.class);
-		return response.getBody().Location.getName();
+		return response.getBody();
 	}
 }

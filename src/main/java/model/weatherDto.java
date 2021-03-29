@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class weatherDto {
 	public String getLocation() {
 		return location;
@@ -13,23 +15,23 @@ public class weatherDto {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
-	public String getTemp_celsius() {
+	public int getTemp_celsius() {
 		return temp_celsius;
 	}
-	public void setTemp_celsius(String temp_celsius) {
-		this.temp_celsius = temp_celsius;
+	public void setTemp_celsius(int i) {
+		this.temp_celsius = i;
 	}
-	public String getRel_humidity() {
+	public int getRel_humidity() {
 		return rel_humidity;
 	}
-	public void setRel_humidity(String rel_humidity) {
-		this.rel_humidity = rel_humidity;
+	public void setRel_humidity(int i) {
+		this.rel_humidity = i;
 	}
-	public String getWindSpeed_mps() {
+	public int getWindSpeed_mps() {
 		return windSpeed_mps;
 	}
-	public void setWindSpeed_mps(String windSpeed_mps) {
-		this.windSpeed_mps = windSpeed_mps;
+	public void setWindSpeed_mps(int i) {
+		this.windSpeed_mps = i;
 	}
 	public String getWindDirection() {
 		return windDirection;
@@ -37,17 +39,17 @@ public class weatherDto {
 	public void setWindDirection(String windDirection) {
 		this.windDirection = windDirection;
 	}
-	public String getWeatherDescription() {
+	public List<String> getWeatherDescription() {
 		return weatherDescription;
 	}
-	public void setWeatherDescription(String weatherDescription) {
-		this.weatherDescription = weatherDescription;
+	public void setWeatherDescription(List<String> list) {
+		this.weatherDescription = list;
 	}
 	private String location;
 	private String timestamp;
-	private String temp_celsius;
-	private String rel_humidity;
-	private String windSpeed_mps;
+	private int temp_celsius;
+	private int rel_humidity;
+	private int windSpeed_mps;
 	private String windDirection;
-	private String weatherDescription;
+	private List<String> weatherDescription;
 }

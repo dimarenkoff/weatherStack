@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.city;
 import com.example.demo.connect.weatherStackConnector;
 import model.weatherDto;
+import service.weatherService;
 @RestController
 public class weatherController {
 	@RequestMapping("/weather")	
@@ -16,8 +17,7 @@ public class weatherController {
 	@RequestMapping("/weather/{city}")	
 	weatherDto getWeatherForCity(@PathVariable String city) throws URISyntaxException{
 		city cityEnum=com.example.demo.city.valueOf(city.toUpperCase());
-		weatherDto n1=new weatherDto();
-		n1.setLocation(city);
-
-		weatherStackConnector connector=new weatherStackConnector(); return n1; }
+		weatherService ws = new weatherService();
+		return ws.getWeatherForCity(cityEnum);
+		}
 }
